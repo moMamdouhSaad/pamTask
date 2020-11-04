@@ -1,0 +1,33 @@
+:host {
+  margin-bottom: 10px;
+}
+#main-post-title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+#main-post-description {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+#main-post-image {
+  border: 2px green dashed;
+  width: 100%;
+}
+
+.tag {
+  color: grey;
+  font-size: 0.7rem;
+}
+
+#secondary-post-title {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#recent-post-title {
+  font-size: 0.8rem;
+}
+
+.image {
+  width: 100%;
+}

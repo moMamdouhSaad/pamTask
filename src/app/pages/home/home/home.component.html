@@ -5,5 +5,286 @@
     </div>
 
 
+        <!-- content -->
+
+    <div fxLayout.lg="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutAlign="start start"   id='content' style='border:1px red dashed'>
+
+    <!--  news -->
+        <div fxFlex.lg="75%" fxFlex.lt-md="70%"  fxFlex.lt-sm="100%" fxLayout.lt-md="column"  fxLayout.lt-sm="column"   fxLayout.lg="column" fxLayoutAlign="space-between start">
+        
+        
+
+
+                    <div fxFlex='100%' fxLayout.lt-md="column" fxLayout.lt-sm="column"
+                        fxLayout.lg="row" fxLayoutAlign="space-between start">
+
+            <!-- main post -->
+            <div style='border:6px green solid;height: 100%;'  id='main-new' fxFlex.lg="65%" fxFlex.lt-md="100%"   fxFlex.lt-sm="100%">
+                <pam-post  [type]='"main-post"'>
+
+
+
+                       <div slot="title">
+                            If you wanted to get rich, how would you do it?
+                       </div>
+                       
+                       <div mainImg>
+                           <img src="../../../../assets/test.png" />
+                       </div>
+
+                       <div slot='tag'>
+                           social media
+                       </div>
+
+                       <div slot='description'>
+                        i think your best bet would be to start or join a startup.
+                        That's been a rellable way to get rich for hundereds of years.
+                        The word "startup" dates from the 1960s, but what happens
+                        in one is very similer.
+                       </div>
+
+                        <div slot='content'>
+                            content
+                        </div>
+
+                        <span slot='author'>
+                            Mohamed Mamdouh
+                        </span>
+                        
+                        <div slot='other-info'>
+                            other info
+                        </div>
+                        
+
+                </pam-post>
+            </div>
+            <!--  -->
+
+            <!-- secondary posts -->
+            <div style='border:6px green solid' fxFlex.lg="35%" fxFlex.lt-md="100%"    fxFlex.lt-sm="100%" fxLayout.lt-md="row" fxLayout.lg="column" fxLayout.lt-sm="column" fxLayout='column'  fxLayoutAlign="start center">
+                
+                <pam-post [type]="'secondary-post'">
+    <div scdTitle>
+                        If you wanted to get rich, how would you do it?
+                    </div>
+                    
+                    <div scdImg>
+                        <img src="../../../../assets/test.png" />
+                    </div>
+                    
+                    <div scdTag>
+                        social media
+                    </div>
+                    <div scdOtherInfo>
+                        other info
+                    </div>
+                </pam-post>
+
+                <pam-post [type]="'secondary-post'">
+                    <div ads>
+                ads
+                    </div>
+                    <div scdTitle>
+                        If you wanted to get rich, how would you do it?
+                    </div>
+
+                    <div scdImg>
+                        <img src="../../../../assets/test.png" />
+                    </div>
+
+                    <div scdTag>
+                        social media
+                    </div>
+                    <div scdOtherInfo>
+                        other info
+                    </div>
+                </pam-post>                
+
+            </div>
+            </div>
+            <!--  -->
+
+            <div fxFlex='100%' fxLayout='column'   fxLayoutAlign="start start" >
+                
+                <span>Editors picks</span>
+
+                <pam-post [type]="'editor-pick-post'">
+
+                    <div editorPickTag>
+                        Social media
+                    </div>
+
+                    <div editorPickTitle>
+                        If you wanted to get rich, how would you do it?
+                    </div>
+                
+                    <div editorPickImg>
+                        <img src="../../../../assets/test.png" />
+                    </div>
+                
+                    <div editorPickdesc>
+                    description descriptiondescription description descriptiondescription descriptiondescriptiondescriptiondescription
+                    </div>
+                    <span editorPickAuthor>
+mohamed                    
+        </span>
+                </pam-post>
+                <pam-post [type]="'editor-pick-post'">
+                
+                    <div editorPickTag>
+                        Social media
+                    </div>
+                
+                    <div editorPickTitle>
+                        If you wanted to get rich, how would you do it?
+                    </div>
+                
+                    <div editorPickImg>
+                        <img src="../../../../assets/test.png" />
+                    </div>
+                
+                    <div editorPickdesc>
+                        description descriptiondescription description descriptiondescription
+                        descriptiondescriptiondescriptiondescription
+                    </div>
+                    <span editorPickAuthor>
+                        mohamed
+                    </span>
+                </pam-post>
+                <pam-post [type]="'editor-pick-post'">
+                
+                    <div editorPickTag>
+                        Social media
+                    </div>
+                
+                    <div editorPickTitle>
+                        If you wanted to get rich, how would you do it?
+                    </div>
+                
+                    <div editorPickImg>
+                        <img src="../../../../assets/test.png" />
+                    </div>
+                
+                    <div editorPickdesc>
+                        description descriptiondescription description descriptiondescription
+                        descriptiondescriptiondescriptiondescription
+                    </div>
+                    <span editorPickAuthor>
+                        mohamed
+                    </span>
+                </pam-post>
+            </div>
+        </div>
+
+        <!-- side boxex -->
+        <div id='side-boxes'  fxFlex.lg="25%" fxFlex.md="30%" >
+           
+<pam-box [title]='"Recent posts"'>
+    <!-- recent boxex -->
+
+    <div>
+    
+<pam-post [type]='"recent-post"'>
+
+<span recentTitle>
+    If you wanted to get rich, how would you do it?
+</span>
+
+<span recentImg>
+    <img src="../../../../assets/test.png" />
+</span>
+
+
+<span recentInfo>
+    other info
+</span>
+            
+</pam-post>
+<pam-post [type]='"recent-post"'>
+
+    <span recentTitle>
+        If you wanted to get rich, how would you do it?
+    </span>
+
+    <span recentImg>
+        <img src="../../../../assets/test.png" />
+    </span>
+
+
+    <span recentInfo>
+        other info
+    </span>
+
+</pam-post>
+<pam-post [type]='"recent-post"'>
+
+    <span recentTitle>
+        If you wanted to get rich, how would you do it?
+    </span>
+
+    <span recentImg>
+        <img src="../../../../assets/test.png" />
+    </span>
+
+
+    <span recentInfo>
+        other info
+    </span>
+
+</pam-post>
+    </div>
+<!--  -->
+
+
+</pam-box>
+
+        <pam-box [title]='"5 most popular"'>
+            <ol>
+                <li >
+If you wanted to get rich, how would you do it?
+                </li>
+                            <hr>
+
+                <li>
+                    If you wanted to get rich, how would you do it?
+                </li>
+                            <hr>
+
+                <li>
+                    If you wanted to get rich, how would you do it?
+                </li>
+                            <hr>
+
+                <li>
+                    If you wanted to get rich, how would you do it?
+                </li>
+                            <hr>
+
+                <li>
+                    If you wanted to get rich, how would you do it?
+                </li>
+            </ol>
+            
+
+        </pam-box>
+
+<pam-box [title]='"Good News Newsletter"'>
+    <p>
+    
+        If you wanted to get rich, how would you do it?
+    
+        If you wanted to get rich, how would you do it?
+    
+    </p>
+</pam-box>
+
+<pam-box [title]='"Follow us"'>
+  icons
+</pam-box>
+        </div>
+        <!--  -->
+
+    </div>
+<!--  -->
+
 </div>
-asda

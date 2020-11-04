@@ -23,6 +23,7 @@
     "@angular/router": "~10.0.14",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.5.5",
     "rxjs-tslint-rules": "^4.34.3",
     "tslib": "^2.0.0",

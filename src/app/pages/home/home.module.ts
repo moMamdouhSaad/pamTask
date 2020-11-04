@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { SharedModule } from '../../shared/shared.module';
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, HomeRoutingModule, FlexLayoutModule],
+  imports: [CommonModule, HomeRoutingModule, SharedModule, FlexLayoutModule],
 })
 export class HomeModule {}

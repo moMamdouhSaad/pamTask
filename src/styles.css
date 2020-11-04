@@ -5,3 +5,15 @@ body {
   margin: 0;
   padding: 0;
 }
+img {
+  width: 100%;
+}
+
+ol,
+ol li {
+  margin-left: 0;
+  padding-left: 0;
+}
+ol {
+  margin-left: 1.3em;
+}
