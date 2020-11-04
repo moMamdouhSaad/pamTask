@@ -1,0 +1,14 @@
+#title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#author {
+  color: orangered;
+}
+
+.box-item {
+  padding: 15px 5px;
+  font-weight: bold;
+  color: grey;
+}

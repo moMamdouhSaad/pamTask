@@ -4,7 +4,20 @@ import { CoreModule } from '../app/core/core.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from './pages/home/home.module';
-const routes = [];
+const routes = [
+  {
+    path: 'posts/:id',
+    loadChildren: () =>
+      import('./pages/post-details/post-details.module').then(
+        (m) => m.PostDetailsModule
+      ),
+  },
+  {
+    path: '',
+    redirectTo: 'posts',
+    pathMatch: 'full',
+  },
+];
 @NgModule({
   declarations: [AppComponent],
   imports: [

@@ -1,0 +1,85 @@
+    <!-- main wrapper -->
+    <div fxLayout="column" class='container' fxLayoutAlign="space-between center">
+
+        <div id='title'>
+            {{(post$ | async)?.title}}
+        </div>
+
+        <!-- post info wrapper -->
+      <div class='w-100'  fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+
+    <div>
+        By : 
+        <span id='author'>
+        {{(post$ | async)?.author}}
+        </span>
+
+    </div>
+
+    <div>
+        Published on {{(post$ | async)?.publishedAt | date: 'dd/MM hh:mm a'}}
+    </div>
+          
+      </div>  
+      <hr>
+      <!--  -->
+
+    <!-- content wrapper -->
+    <div class='w-100' fxLayoutGap="20px"  fxLayout.lt-md="row"  fxLayout.lt-sm="column"   fxLayout.lg="row" fxLayoutAlign="space-around start">
+
+<!-- sidebox -->
+<div pamBox   fxLayout.lg='column' fxLayout.lt-md='column' fxLayout.lt-sm='row' fxFlex.lg="15%" fxFlex.lt-md="20%"  fxFlex.lt-sm="100%"  >
+<span class='box-item'>
+    Email
+</span>
+<span class='box-item'>
+    Facebook
+</span>
+<span class='box-item'>
+    Twitter
+</span>
+<span class='box-item'>
+    More
+</span>
+</div>
+<!--  -->
+
+<!-- post content -->
+<div fxFlex.lg="85%" fxLayoutGap='30px' fxFlex.lt-md="80%"  fxFlex.lt-sm="100%" fxLayout='column'>
+
+    <div id='img-container'>
+        <img [src]="(post$ | async)?.urlToImage" />
+    </div>
+
+    <div id='content'>
+        {{(post$ | async)?.content}}
+    </div>
+
+    <div id='btns-wrapper'>
+        <button type="button" class="btn btn-success mr-2">I found this helpful</button>
+        <button type="button" class="btn btn-light">I didn't found this helpful</button>
+    </div>
+
+    <div class='w-100' id="comments">
+        <h4>
+            Comments
+        </h4>
+
+        <pam-comment *ngFor='let comment of comments$ | async' [data]='comment'></pam-comment>
+    </div>
+
+    <div class="w-100">
+        <h4>
+            Join the conversation
+        </h4>
+
+        <pam-comment-form (saveComment)='addComment($event)'></pam-comment-form>
+    </div>
+
+</div>
+<!--  -->
+     </div>   
+      <!--  -->
+
+    </div>
+    <!--  -->

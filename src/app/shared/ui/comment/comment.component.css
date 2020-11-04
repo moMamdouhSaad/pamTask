@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  padding: 30px;
+  border: 1px rgb(218, 212, 212) solid;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#profile-img {
+  border-radius: 50%;
+}
+#user-name {
+  font-weight: bold;
+}

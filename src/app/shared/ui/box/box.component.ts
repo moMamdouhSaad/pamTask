@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'pam-box',
+  selector: 'pam-box,[pamBox]',
   templateUrl: './box.component.html',
   styleUrls: ['./box.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

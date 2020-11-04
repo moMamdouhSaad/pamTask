@@ -1,0 +1,21 @@
+<ng-container>
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap='20px'>
+        
+<div id='img-wrapper' fxFlex='10%' >
+        <img id='profile-img' src='../../../../assets/profile.png' />
+</div>
+<div id="comment-wrapper">
+
+    <div id='user-name'>
+        {{data?.username}}
+    </div>
+
+    <div id='content'>
+        {{data?.content}}
+    </div>
+
+</div>
+
+    </div>
+
+</ng-container>
