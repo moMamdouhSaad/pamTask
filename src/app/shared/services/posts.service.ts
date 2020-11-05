@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Post, ApiResponse, Comment } from '../utils/interfaces';
 const defaultComments = [
   {
@@ -74,8 +75,12 @@ const defaultComments = [
     content: 'Comment content',
   },
 ];
-const apiUrl =
-  'https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=33ba70d6367648b49a76910dfad62ad4';
+/*
+error:
+code: "corsNotAllowed"
+message: "Requests from the browser are not allowed on the Developer plan, except from localhost."
+status: "error"
+*/
 
 @Injectable({
   providedIn: 'root',
@@ -89,7 +94,7 @@ export class PostsService {
   constructor(private readonly http: HttpClient) {}
 
   public getAllPosts$(): Observable<Post[]> {
-    return this.http.get<ApiResponse>(apiUrl).pipe(
+    return this.http.get<ApiResponse>(environment.api).pipe(
       map((response) =>
         response.articles.map((article, i) => {
           article.id = i + 1;
