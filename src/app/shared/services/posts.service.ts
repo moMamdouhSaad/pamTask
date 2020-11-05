@@ -2,39 +2,76 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Post, ApiResponse, Comment } from '../utils/interfaces';
 const defaultComments = [
   {
     postId: 1,
     username: 'mohamed',
     email: 'email@test.com',
-    content: 'one',
+    content: 'Comment content',
   },
   {
     postId: 1,
     username: 'mohamed',
     email: 'email@test.com',
-    content: 'onhiie',
+    content: 'Comment content',
   },
 
   {
     postId: 2,
     username: 'mohamed',
     email: 'email@test.com',
-    content: 'two',
+    content: 'Comment content',
   },
 
   {
     postId: 3,
     username: 'mohamed',
     email: 'email@test.com',
-    content: 'Three',
+    content: 'Comment content',
   },
 
   {
     postId: 4,
     username: 'mohamed',
     email: 'email@test.com',
-    content: 'four',
+    content: 'Comment content',
+  },
+  {
+    postId: 5,
+    username: 'mohamed',
+    email: 'email@test.com',
+    content: 'Comment content',
+  },
+  {
+    postId: 6,
+    username: 'mohamed',
+    email: 'email@test.com',
+    content: 'Comment content',
+  },
+  {
+    postId: 7,
+    username: 'mohamed',
+    email: 'email@test.com',
+    content: 'Comment content',
+  },
+  {
+    postId: 8,
+    username: 'mohamed',
+    email: 'email@test.com',
+    content: 'Comment content',
+  },
+  {
+    postId: 9,
+    username: 'mohamed',
+    email: 'email@test.com',
+    content: 'Comment content',
+  },
+  {
+    postId: 10,
+    username: 'mohamed',
+    email: 'email@test.com',
+    content: 'Comment content',
   },
 ];
 const apiUrl =
@@ -44,16 +81,16 @@ const apiUrl =
   providedIn: 'root',
 })
 export class PostsService {
-  private readonly postDetailsSubject = new BehaviorSubject<any>(null);
-  private readonly commentsSubject = new BehaviorSubject<any[]>(
+  private readonly postDetailsSubject = new BehaviorSubject<Post>(null);
+  private readonly commentsSubject = new BehaviorSubject<Comment[]>(
     defaultComments
   );
 
   constructor(private readonly http: HttpClient) {}
 
-  public getAllPosts$(): Observable<any[]> {
-    return this.http.get<any[]>(apiUrl).pipe(
-      map((response: any) =>
+  public getAllPosts$(): Observable<Post[]> {
+    return this.http.get<ApiResponse>(apiUrl).pipe(
+      map((response) =>
         response.articles.map((article, i) => {
           article.id = i + 1;
           return article;
@@ -62,19 +99,15 @@ export class PostsService {
     );
   }
 
-  public setPostDetails(post: any): void {
+  public setPostDetails(post: Post): void {
     this.postDetailsSubject.next(post);
   }
 
-  public getPostDetails$(): Observable<any> {
+  public getPostDetails$(): Observable<Post> {
     return this.postDetailsSubject.asObservable();
   }
 
-  // public setComments(comments: any[]): void {
-  //   this.commentsSubject.next(comments);
-  // }
-
-  public getComments$(postId: number): Observable<any[]> {
+  public getComments$(postId: number): Observable<Comment[]> {
     return this.commentsSubject
       .asObservable()
       .pipe(
@@ -84,7 +117,7 @@ export class PostsService {
       );
   }
 
-  public addComment(comment: any): void {
+  public addComment(comment: Comment): void {
     const comments = this.commentsSubject.getValue();
     this.commentsSubject.next([...comments, comment]);
   }

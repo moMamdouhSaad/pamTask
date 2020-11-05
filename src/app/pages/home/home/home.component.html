@@ -1,8 +1,7 @@
 <div class="container">
   <h2 fxLayout="row" class="p-3" fxLayoutAlign="center center">Latest News</h2>
 
-  <!-- content -->
-
+  <!-- Body -->
   <div
     fxLayoutGap="10px"
     fxLayout.lg="row"
@@ -11,14 +10,12 @@
     fxLayoutAlign="start start"
     id="content"
   >
-    <!--  news -->
+    <!--  Main news -->
     <div
       fxFlex.lg="75%"
       fxFlex.lt-md="70%"
       fxFlex.lt-sm="100%"
-      fxLayout.lt-md="column"
-      fxLayout.lt-sm="column"
-      fxLayout.lg="column"
+      fxLayout="column"
       fxLayoutAlign="space-between start"
     >
       <div
@@ -98,7 +95,6 @@
           </pam-post>
         </div>
       </div>
-      <!--  -->
 
       <div fxFlex="100%" fxLayout="column" fxLayoutAlign="start start">
         <h2 class="py-3">Editors picks</h2>
@@ -128,11 +124,10 @@
       </div>
     </div>
 
-    <!-- side boxex -->
+    <!-- Other news (recent ..etc) -->
     <div id="side-boxes" fxFlex.lg="25%" fxFlex.md="30%">
       <pam-box [title]="'Recent posts'">
-        <!-- recent boxex -->
-
+        <!-- Recent -->
         <div>
           <pam-post
             *ngFor="let post of allPosts$ | async | slice: 6:9"
@@ -157,9 +152,9 @@
             </span>
           </pam-post>
         </div>
-        <!--  -->
       </pam-box>
 
+      <!-- Most popular -->
       <pam-box [title]="'5 most popular'">
         <ol>
           <li *ngFor="let post of allPosts$ | async | slice: 3:8">
@@ -171,6 +166,7 @@
         </ol>
       </pam-box>
 
+      <!-- Subscription -->
       <pam-box [title]="'Good News Newsletter'">
         <p>
           Subscribe to our email newsletter for good news, sent out every
@@ -185,6 +181,7 @@
         </div>
       </pam-box>
 
+      <!-- Follow us -->
       <pam-box [title]="'Follow us'">
         <div fxLayout="row" fxLayoutAlign="space-around center">
           <i
@@ -215,7 +212,5 @@
         </div>
       </pam-box>
     </div>
-    <!--  -->
   </div>
-  <!--  -->
 </div>

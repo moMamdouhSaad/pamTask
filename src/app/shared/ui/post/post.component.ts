@@ -3,9 +3,8 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   Input,
-  ContentChild,
-  TemplateRef,
 } from '@angular/core';
+import { Post } from '../../utils/interfaces';
 
 @Component({
   selector: 'pam-post',
@@ -16,9 +15,7 @@ import {
 export class PostComponent implements OnInit {
   constructor() {}
   @Input() public type: string;
-  @Input() public data: any; //Todo
-  @ContentChild('mainPost') mainPostTmpl: TemplateRef<any>;
-  @ContentChild('title') title: TemplateRef<any>;
+  @Input() public data: Post;
 
   ngOnInit(): void {}
 }

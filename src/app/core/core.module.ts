@@ -6,10 +6,11 @@ import { ProgressBarComponent } from './ui/progress-bar/progress-bar.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptorService } from './services/loader-interceptor.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HeaderComponent, ProgressBarComponent],
-  imports: [CommonModule, FlexLayoutModule, MatProgressBarModule],
+  imports: [CommonModule, FlexLayoutModule, MatProgressBarModule, RouterModule],
   exports: [HeaderComponent],
   providers: [
     {

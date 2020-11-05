@@ -1,8 +1,13 @@
 <div id="header-warpper">
   <div class="container" fxLayout="row" fxLayoutAlign="space-between center">
-    <span id="logo-wrapper"> logo </span>
+    <div id="logo-wrapper" [routerLink]="['/posts']">
+      <span id="logo-text"> PAM </span>
+      <sup>INC.</sup>
+    </div>
 
-    <span id="btn-wrapper"> btn </span>
+    <span id="btn-wrapper">
+      <button type="button" class="btn btn-light">Visit Our Website</button>
+    </span>
   </div>
 </div>
 <progress-bar *ngIf="loaderState$ | async"></progress-bar>

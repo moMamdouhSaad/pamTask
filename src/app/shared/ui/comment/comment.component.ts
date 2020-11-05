@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   Input,
 } from '@angular/core';
+import { Comment } from '../../utils/interfaces';
 
 @Component({
   selector: 'pam-comment',
@@ -12,7 +13,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommentComponent implements OnInit {
-  @Input() public data: any;
+  @Input() public data: Comment;
 
   public constructor() {}
 

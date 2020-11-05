@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PostsService } from 'src/app/shared/services/posts.service';
+import { Comment, Post } from 'src/app/shared/utils/interfaces';
 
 @Component({
   selector: 'app-post-details',
@@ -9,8 +10,8 @@ import { PostsService } from 'src/app/shared/services/posts.service';
   styleUrls: ['./post-details.component.css'],
 })
 export class PostDetailsComponent implements OnInit {
-  post$: Observable<any>;
-  comments$: Observable<any[]>;
+  post$: Observable<Post>;
+  comments$: Observable<Comment[]>;
 
   public constructor(
     private readonly postsService: PostsService,
@@ -31,12 +32,11 @@ export class PostDetailsComponent implements OnInit {
     this.comments$ = this.postsService.getComments$(id);
   }
 
-  public addComment(comment: any): void {
+  public addComment(comment: Comment): void {
     const newComment = {
       ...comment,
       postId: parseInt(this._route.snapshot.params['id']),
     };
-    console.log(newComment);
     this.postsService.addComment(newComment);
   }
 }

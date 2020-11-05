@@ -2,3 +2,20 @@
   background-color: red;
   padding: 1em;
 }
+#logo-text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+#logo-wrapper {
+  cursor: pointer;
+}
+
+sup {
+  color: white;
+  font-weight: bold;
+}
+
+#btn-wrapper button {
+  color: red;
+}

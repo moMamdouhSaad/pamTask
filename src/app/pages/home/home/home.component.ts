@@ -1,19 +1,15 @@
-import { Component, ContentChild, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { first, map, take } from 'rxjs/operators';
 import { PostsService } from 'src/app/shared/services/posts.service';
+import { Post } from 'src/app/shared/utils/interfaces';
 
 @Component({
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public post = {
-    title: 'If you wanted to get rich, how would you do it?',
-  };
-
-  public allPosts$: Observable<any>;
+  public allPosts$: Observable<Post[]>;
 
   public constructor(
     private readonly router: Router,
@@ -24,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.allPosts$ = this.postService.getAllPosts$();
   }
 
-  public postClicked(post: any) {
+  public postClicked(post: Post): void {
     this.postService.setPostDetails(post);
     this.router.navigate(['/posts', post.id]);
   }
