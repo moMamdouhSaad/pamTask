@@ -1,15 +1,8 @@
-<div id='header-warpper' >
+<div id="header-warpper">
+  <div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+    <span id="logo-wrapper"> logo </span>
 
-    <div class="container" fxLayout="row"  fxLayoutAlign="space-between center" >
-
-                <span id='logo-wrapper'>
-                    logo
-                </span>
-
-                <span id='btn-wrapper'>
-                    btn
-                </span>
-                
-    </div>
-
+    <span id="btn-wrapper"> btn </span>
+  </div>
 </div>
+<progress-bar *ngIf="loaderState$ | async"></progress-bar>

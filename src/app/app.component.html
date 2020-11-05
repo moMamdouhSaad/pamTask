@@ -1,5 +1,7 @@
-
 <pam-header></pam-header>
-
-
-<router-outlet></router-outlet>
+<div
+  [style.display]=""
+  [ngStyle]="{ display: (loaderState$ | async) === true ? 'none' : 'block' }"
+>
+  <router-outlet></router-outlet>
+</div>

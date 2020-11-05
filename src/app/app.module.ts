@@ -4,6 +4,7 @@ import { CoreModule } from '../app/core/core.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HomeModule } from './pages/home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes = [
   {
     path: 'posts/:id',
@@ -25,6 +26,7 @@ const routes = [
     CoreModule,
     RouterModule.forRoot(routes),
     HomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
