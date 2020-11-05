@@ -1,170 +1,221 @@
 <div class="container">
+  <h2 fxLayout="row" class="p-3" fxLayoutAlign="center center">Latest News</h2>
 
-    <div  fxLayout="row" fxLayoutAlign="center center" id='latest-news-wrapper'>
-        Latest news
-    </div>
+  <!-- content -->
 
-
-        <!-- content -->
-
-    <div fxLayout.lg="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutAlign="start start"   id='content'>
-
+  <div
+    fxLayoutGap="10px"
+    fxLayout.lg="row"
+    fxLayout.lt-sm="column"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="start start"
+    id="content"
+  >
     <!--  news -->
-        <div fxFlex.lg="75%" fxFlex.lt-md="70%"  fxFlex.lt-sm="100%" fxLayout.lt-md="column"  fxLayout.lt-sm="column"   fxLayout.lg="column" fxLayoutAlign="space-between start">
-        
-        
-
-
-                    <div fxFlex='100%' fxLayout.lt-md="column" fxLayout.lt-sm="column"
-                        fxLayout.lg="row" fxLayoutAlign="space-between start">
-
-            <!-- main post -->
-            <div   id='main-new' fxFlex.lg="65%" fxFlex.lt-md="100%"   fxFlex.lt-sm="100%">
-                <pam-post *ngFor='let post of allPosts$  | async | slice:0:1' [type]='"main-post"'>
-
-
-                       <div slot="title" >
-                         <a href='' (click)='postClicked(post);$event.preventDefault()'> {{ post.title }} </a>        
-                       </div>
-                       
-                       <div mainImg>
-                           <img [src]="post.urlToImage" />
-                       </div>
-
-                       <div slot='tag'>
-                           social media
-                       </div>
-
-                       <div slot='description'>
-                      {{post.description}}
-                       </div>
-
-                        >
-
-                        <span slot='author'>
-                    {{post.author}}
-                        </span>
-                        
-                       
-                        
-
-                </pam-post>
+    <div
+      fxFlex.lg="75%"
+      fxFlex.lt-md="70%"
+      fxFlex.lt-sm="100%"
+      fxLayout.lt-md="column"
+      fxLayout.lt-sm="column"
+      fxLayout.lg="column"
+      fxLayoutAlign="space-between start"
+    >
+      <div
+        fxLayoutGap="10px"
+        fxFlex="100%"
+        fxLayout.lt-md="column"
+        fxLayout.lt-sm="column"
+        fxLayout.lg="row"
+        fxLayoutAlign="space-between start"
+      >
+        <!-- main post -->
+        <div
+          id="main-new"
+          fxFlex.lg="65%"
+          fxFlex.lt-md="100%"
+          fxFlex.lt-sm="100%"
+        >
+          <pam-post
+            *ngFor="let post of allPosts$ | async | slice: 0:1"
+            [type]="'main-post'"
+          >
+            <div mainTitle>
+              <a href="" (click)="postClicked(post); $event.preventDefault()">
+                {{ post.title }}
+              </a>
             </div>
-            <!--  -->
 
-            <!-- secondary posts -->
-            <div  fxFlex.lg="35%" fxFlex.lt-md="100%"    fxFlex.lt-sm="100%" fxLayout.lt-md="row" fxLayout.lg="column" fxLayout.lt-sm="column" fxLayout='column'  fxLayoutAlign="start center">
-                
-                <pam-post *ngFor='let post of allPosts$  | async | slice:1:3' [type]="'secondary-post'">
-                    <div scdTitle>
-                        <a href='#'> {{ post.title }} </a>
-                    </div>
-                    
-                    <div scdImg>
-                        <img [src]="post.urlToImage" />
-                    </div>
-                    
-                    <div scdTag>
-                        social media
-                    </div>
-                    
-                </pam-post>
-
-                            
-
+            <div mainImg>
+              <img
+                [src]="post.urlToImage"
+                style="cursor: pointer"
+                (click)="postClicked(post)"
+              />
             </div>
+
+            <div description>
+              {{ post.description }}
             </div>
-            <!--  -->
 
-            <div fxFlex='100%' fxLayout='column'   fxLayoutAlign="start start" >
-                
-                <span>Editors picks</span>
+            >
 
-                <pam-post *ngFor='let post of allPosts$  | async | slice:3:7' [type]="'editor-pick-post'">
-
-                    <div editorPickTag>
-                        Social media
-                    </div>
-
-                    <div editorPickTitle>
-                        <a href='#'> {{ post.title }} </a>
-                    </div>
-                
-                    <div editorPickImg>
-                        <img [src]="post.urlToImage" />
-                    </div>
-                
-                   
-                    <span editorPickAuthor>
-                {{post.author}}                    
-        </span>
-                </pam-post>
-               
-            </div>
-        </div>
-
-        <!-- side boxex -->
-        <div id='side-boxes'  fxFlex.lg="25%" fxFlex.md="30%" >
-           
-<pam-box [title]='"Recent posts"'>
-    <!-- recent boxex -->
-
-    <div>
-    
-<pam-post *ngFor='let post of allPosts$  | async | slice:6:9' [type]='"recent-post"'>
-
-<span recentTitle>
-                        <a href='#'> {{ post.title }} </a>
-</span>
-
-<span recentImg>
-                        <img [src]="post.urlToImage" />
-</span>
-
-
-<span recentInfo>
-{{post.publishedAt  | date: 'dd/MM hh:mm a'}}
-</span>
-            
-</pam-post>
-
-    </div>
-<!--  -->
-
-
-</pam-box>
-
-        <pam-box [title]='"5 most popular"'>
-            <ol>
-                <li *ngFor='let post of allPosts$  | async | slice:3:8'  >
-                        <a href='#'> {{ post.title }} </a>
-                                                <hr>
-
-                </li>
-
-               
-            </ol>
-            
-
-        </pam-box>
-
-<pam-box [title]='"Good News Newsletter"'>
-    <p>
-    
-        If you wanted to get rich, how would you do it?
-    
-        If you wanted to get rich, how would you do it?
-    
-    </p>
-</pam-box>
-
-<pam-box [title]='"Follow us"'>
-  icons
-</pam-box>
+            <span author>
+              {{ post.author }}
+            </span>
+          </pam-post>
         </div>
         <!--  -->
 
-    </div>
-<!--  -->
+        <!-- secondary posts -->
+        <div
+          fxFlex.lg="35%"
+          fxFlex.lt-md="100%"
+          fxFlex.lt-sm="100%"
+          fxLayout.lt-md="row"
+          fxLayout.lg="column"
+          fxLayout.lt-sm="column"
+          fxLayout="column"
+          fxLayoutAlign="start center"
+        >
+          <pam-post
+            *ngFor="let post of allPosts$ | async | slice: 1:3"
+            [type]="'secondary-post'"
+          >
+            <div scdTitle>
+              <a href="" (click)="postClicked(post); $event.preventDefault()">
+                {{ post.title }}
+              </a>
+            </div>
 
+            <div scdImg>
+              <img
+                style="cursor: pointer"
+                (click)="postClicked(post)"
+                [src]="post.urlToImage"
+              />
+            </div>
+          </pam-post>
+        </div>
+      </div>
+      <!--  -->
+
+      <div fxFlex="100%" fxLayout="column" fxLayoutAlign="start start">
+        <h2 class="py-3">Editors picks</h2>
+
+        <pam-post
+          *ngFor="let post of allPosts$ | async | slice: 3:7"
+          [type]="'editor-pick-post'"
+        >
+          <div editorPickTitle>
+            <a href="" (click)="postClicked(post); $event.preventDefault()">
+              {{ post.title }}
+            </a>
+          </div>
+
+          <div editorPickImg>
+            <img
+              style="cursor: pointer"
+              (click)="postClicked(post)"
+              [src]="post.urlToImage"
+            />
+          </div>
+
+          <span editorPickAuthor>
+            {{ post.author }}
+          </span>
+        </pam-post>
+      </div>
+    </div>
+
+    <!-- side boxex -->
+    <div id="side-boxes" fxFlex.lg="25%" fxFlex.md="30%">
+      <pam-box [title]="'Recent posts'">
+        <!-- recent boxex -->
+
+        <div>
+          <pam-post
+            *ngFor="let post of allPosts$ | async | slice: 6:9"
+            [type]="'recent-post'"
+          >
+            <span recentTitle>
+              <a href="" (click)="postClicked(post); $event.preventDefault()">
+                {{ post.title }}
+              </a>
+            </span>
+
+            <span recentImg>
+              <img
+                style="cursor: pointer"
+                (click)="postClicked(post)"
+                [src]="post.urlToImage"
+              />
+            </span>
+
+            <span recentInfo>
+              {{ post.publishedAt | date: "dd/MM hh:mm a" }}
+            </span>
+          </pam-post>
+        </div>
+        <!--  -->
+      </pam-box>
+
+      <pam-box [title]="'5 most popular'">
+        <ol>
+          <li *ngFor="let post of allPosts$ | async | slice: 3:8">
+            <a href="" (click)="postClicked(post); $event.preventDefault()">
+              {{ post.title }}
+            </a>
+            <hr />
+          </li>
+        </ol>
+      </pam-box>
+
+      <pam-box [title]="'Good News Newsletter'">
+        <p>
+          Subscribe to our email newsletter for good news, sent out every
+          Monday.
+        </p>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Email" />
+          <div class="input-group-append">
+            <button class="btn btn-danger" type="submit">Subscribe</button>
+          </div>
+        </div>
+      </pam-box>
+
+      <pam-box [title]="'Follow us'">
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+          <i
+            style="color: #3b5998"
+            class="fa fa-facebook-official icon"
+            aria-hidden="true"
+          ></i>
+          <i
+            style="color: #00acee"
+            class="fa fa-twitter-square icon"
+            aria-hidden="true"
+          ></i>
+          <i
+            style="color: #db4a39"
+            class="fa fa-google-plus-square icon"
+            aria-hidden="true"
+          ></i>
+          <i
+            style="color: #0e76a8"
+            class="fa fa-linkedin-square icon"
+            aria-hidden="true"
+          ></i>
+          <i
+            style="color: #ff0000"
+            class="fa fa-youtube-square icon"
+            aria-hidden="true"
+          ></i>
+        </div>
+      </pam-box>
+    </div>
+    <!--  -->
+  </div>
+  <!--  -->
 </div>

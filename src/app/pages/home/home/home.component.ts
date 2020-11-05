@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit(): void {
     this.allPosts$ = this.postService.getAllPosts$();
-    this.allPosts$.subscribe((data) => console.log(data));
   }
 
   public postClicked(post: any) {

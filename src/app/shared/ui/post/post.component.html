@@ -1,113 +1,84 @@
+<!--  main post structure -->
+<ng-container *ngIf="type == 'main-post'">
+  <div class="image">
+    <ng-content select="[mainImg]"></ng-content>
+  </div>
 
-    <ng-container *ngIf='type == "main-post"'>
+  <div id="main-post-title">
+    <ng-content select="[mainTitle]"></ng-content>
+  </div>
 
-        <div class="image">
-            <ng-content select="[mainImg]"></ng-content>
-        </div>
+  <div id="main-post-description">
+    <ng-content select="[description]"></ng-content>
+  </div>
 
-        <div class="tag">
-            <ng-content select="[slot=tag]"></ng-content>
-        </div>
-        
-        <div id="main-post-title">
-            <ng-content  select="[slot=title]"></ng-content>
-        </div>
+  <div id="author">
+    By :
+    <span class="cursor-pointer">
+      <ng-content select="[author]"></ng-content>
+    </span>
+  </div>
+</ng-container>
+<!--  -->
 
-        <div id="main-post-description">
-            <ng-content select="[slot=description]"></ng-content>
-        </div>
+<!-- Secondary post structure -->
+<ng-container *ngIf="type == 'secondary-post'">
+  <div class="image">
+    <ng-content select="[scdImg]"></ng-content>
+  </div>
 
-        <div id="author">
-           By:  <ng-content select="[slot=author]"></ng-content>
-        </div>
+  <div id="secondary-post-title">
+    <ng-content select="[scdTitle]"></ng-content>
+  </div>
+</ng-container>
+<!--  -->
 
-        <div id="other-info">
-            <ng-content select="[slot=other-info]"></ng-content>
-        </div>
-        
-    </ng-container>
+<ng-container *ngIf="type == 'recent-post'">
+  <div fxFlex="100%" fxFlex="100%" fxLayout="row" fxLayoutAlign="center center">
+    <div class="image">
+      <ng-content select="[recentImg]"></ng-content>
+    </div>
 
-
-    <ng-container *ngIf='type == "secondary-post"'>
-        <div class="image">
-            <ng-content select="[scdImg]"></ng-content>
-        </div>
-
-        <div class="tag">
-            <ng-content select="[scdTag]"></ng-content>
-        </div>
-    
-        <div id="secondary-post-title">
-            <ng-content select="[scdTitle]"></ng-content>
-        </div>
-    
-
-        <div id="secondary-info">
-            <ng-content select="[scdOtherInfo]"></ng-content>
-        </div>
-    
-    
-
-    </ng-container>
-
-
-    <ng-container *ngIf='type == "recent-post"'>
-      <div fxFlex="100%"    fxFlex="100%" fxLayout="row"   fxLayoutAlign="center center">
-<div class="image">
-    <ng-content select="[recentImg]"></ng-content>
-</div>
-
-<div fxFlex="100%" fxLayout="column" style='margin:5px'  fxLayoutAlign="center start">
-<div id="recent-post-title">
-    <ng-content select="[recentTitle]"></ng-content>
-</div>
-<div id="recent-info">
-    <ng-content select="[recentInfo]"></ng-content>
-</div>
-</div>
-
-
-
+    <div
+      fxFlex="100%"
+      fxLayout="column"
+      style="margin: 5px"
+      fxLayoutAlign="center start"
+    >
+      <div id="recent-post-title">
+        <ng-content select="[recentTitle]"></ng-content>
       </div>
-      
-    
-    
-       
-        
-    
-    </ng-container>
+      <div id="recent-info">
+        <ng-content select="[recentInfo]"></ng-content>
+      </div>
+    </div>
+  </div>
+</ng-container>
 
-    <ng-container *ngIf='type == "editor-pick-post"'>
+<ng-container *ngIf="type == 'editor-pick-post'">
+  <div fxLayoutGap="7px" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="25%" class="image">
+      <ng-content select="[editorPickImg]"></ng-content>
+    </div>
 
-        <div   fxLayout="row"  fxLayoutAlign="center center">
+    <div fxFlex="75%" fxLayout="column" fxLayoutAlign="center start">
+      <div class="tag">
+        <ng-content select="[editorPickTag]"></ng-content>
+      </div>
 
-            
-            <div fxFlex="25%" class="image">
-                <ng-content select="[editorPickImg]"></ng-content>
-            </div>
+      <div id="editor-pick-title">
+        <ng-content select="[editorPickTitle]"></ng-content>
+      </div>
+      <div id="editor-pick-desc">
+        <ng-content select="[editorPickdesc]"></ng-content>
+      </div>
 
-            <div fxFlex="75%" fxLayout="column" fxLayoutAlign="center start" >
-
-                
-<div class="tag">
-    <ng-content select="[editorPickTag]"></ng-content>
-
-</div>
-
-                <div id="editor-pick-title">
-                <ng-content select="[editorPickTitle]"></ng-content>
-
-                </div>
-                <div id="editor-pick-desc">
-                    <ng-content select="[editorPickdesc]"></ng-content>
-                </div>
-
-                <div id="editor-pick-author">
-              by:      <ng-content select="[editorPickAuthor]"></ng-content>
-                </div>
-            </div>
-
-        </div>
-
-
-    </ng-container>
+      <div id="editor-pick-author">
+        by:
+        <span class="cursor-pointer">
+          <ng-content select="[editorPickAuthor]"></ng-content>
+        </span>
+      </div>
+    </div>
+  </div>
+</ng-container>

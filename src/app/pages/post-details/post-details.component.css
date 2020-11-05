@@ -12,3 +12,6 @@
   font-weight: bold;
   color: grey;
 }
+.icon {
+  cursor: pointer;
+}

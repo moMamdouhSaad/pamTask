@@ -30,3 +30,7 @@
 .image {
   width: 100%;
 }
+#recent-info {
+  color: grey;
+  font-size: 0.8rem;
+}
